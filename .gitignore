@@ -1,0 +1,6 @@
+.DS_Store
+*.xcbkptlist
+*.xcuserstate
+UserInterfaceState.xcuserstate
+Breakpoints_v2.xcbkptlist
+xcschememanagement.plist
