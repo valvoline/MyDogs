@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Combine
 
 struct DogsList : View {
 	@State var dataSource:[Dog] = []

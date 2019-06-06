@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Combine
 
 extension UIImage {
 	func sizeImage(to size: Int) -> UIImage {
