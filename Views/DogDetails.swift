@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct DogDetailsView: View {
-	@State var dataSource: Dog
+	///using @State there was wrong, since we introduced a duplicate Source of Thruth.
+	@ObjectBinding var dataSource: Dog
 	
 	var body: some View {
 		NavigationView {

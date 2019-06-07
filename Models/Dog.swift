@@ -11,7 +11,7 @@ import Combine
 
 class Dog : BindableObject, Identifiable {
 	let didChange = PassthroughSubject<Dog, Never>()
-	
+
 	var id = UUID()
 	var name: String
 	var location: String

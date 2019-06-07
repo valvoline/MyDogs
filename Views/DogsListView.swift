@@ -8,8 +8,8 @@
 
 import SwiftUI
 
-struct DogsList : View {
-	@State var dataSource:[Dog] = []
+struct DogsListView : View {
+	@State private var dataSource:[Dog] = [] //should the dataSource move to a complete different Struct? is fine to Bind it to the DogsListView itself?
 	
 	var body: some View {
 		NavigationView {
@@ -25,7 +25,7 @@ struct DogsList : View {
 			}
 			.navigationBarTitle(Text("My dogs"))
 			.navigationBarItems(trailing: Button(action: {
-				self.addDog()
+				withAnimation { self.addDog() }
 			}, label: {
 				Image(systemName: "plus.circle")
 				.imageScale(Image.Scale.large)
@@ -41,7 +41,7 @@ struct DogsList : View {
 #if DEBUG
 struct ContentView_Previews : PreviewProvider {
 	static var previews: some View {
-		DogsList()
+		DogsListView()
 	}
 }
 #endif
