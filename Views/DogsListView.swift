@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct DogsListView : View {
-	@State private var dataSource:[Dog] = [] //should the dataSource move to a complete different Struct? is fine to Bind it to the DogsListView itself?
+	@ObjectBinding var dataSource = DogList()
 	
 	var body: some View {
 		NavigationView {
 			List {
-				ForEach(dataSource) { row in
+				ForEach(dataSource.items) { row in
 					DogCard(dataSource: row)
 				}
 				.onDelete { indices in
 					for i in indices.reversed() {
-						self.dataSource.remove(at: i)
+						self.dataSource.items.remove(at: i)
 					}
 				}
 			}
@@ -34,7 +34,7 @@ struct DogsListView : View {
 	}
 	
 	private func addDog() {
-		dataSource.append(Dog(name: "Another Dog", location: "Somewhere", description: "with some specific features"))
+		dataSource.items.append(Dog(name: "Another Dog", location: "Somewhere", description: "with some specific features"))
 	}
 }
 

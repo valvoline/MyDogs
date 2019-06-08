@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BAE47C722A9AF90003FE5D4 /* DogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE47C622A9AF90003FE5D4 /* DogDetails.swift */; };
+		2BB97E5322AC1B6A007B5324 /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB97E5222AC1B6A007B5324 /* DogList.swift */; };
 		2BD76FC222A97325008DA48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD76FC122A97325008DA48D /* AppDelegate.swift */; };
 		2BD76FC422A97325008DA48D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD76FC322A97325008DA48D /* SceneDelegate.swift */; };
 		2BD76FC622A97325008DA48D /* DogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD76FC522A97325008DA48D /* DogsListView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		2BAE47C622A9AF90003FE5D4 /* DogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetails.swift; sourceTree = "<group>"; };
+		2BB97E5222AC1B6A007B5324 /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
 		2BD76FBE22A97325008DA48D /* MyDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD76FC122A97325008DA48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BD76FC322A97325008DA48D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD76FD622A9A21E008DA48D /* Dog.swift */,
+				2BB97E5222AC1B6A007B5324 /* DogList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				2BD76FC422A97325008DA48D /* SceneDelegate.swift in Sources */,
 				2BD76FD722A9A21E008DA48D /* Dog.swift in Sources */,
 				2BAE47C722A9AF90003FE5D4 /* DogDetails.swift in Sources */,
+				2BB97E5322AC1B6A007B5324 /* DogList.swift in Sources */,
 				2BD76FDA22A9A252008DA48D /* DogCard.swift in Sources */,
 				2BD76FC622A97325008DA48D /* DogsListView.swift in Sources */,
 			);
