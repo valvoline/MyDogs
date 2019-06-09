@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		// Use a UIHostingController as window root view controller
 		let window = UIWindow(frame: UIScreen.main.bounds)
-		window.rootViewController = UIHostingController(rootView: DogsListView())
+		let dataSource = DogList()
+		window.rootViewController = UIHostingController(rootView: DogsListView().environmentObject(dataSource))
 		self.window = window
 		window.makeKeyAndVisible()
 	}

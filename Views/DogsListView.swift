@@ -9,20 +9,31 @@
 import SwiftUI
 
 struct DogsListView : View {
-	@ObjectBinding var dataSource = DogList()
-	
+	@EnvironmentObject var dataSource: DogList
+//	@ObjectBinding var dataSource = DogList()
+
 	var body: some View {
 		NavigationView {
 			List {
-				ForEach(dataSource.items) { row in
-					DogCard(dataSource: row)
+				if dataSource.favorites.isEmpty == false {
+					Section(header: Text("My favorite ones:")) {
+						ForEach(dataSource.favorites) { row in
+							DogCard(dataSource: row)
+						}
+					}
 				}
-				.onDelete { indices in
-					for i in indices.reversed() {
-						self.dataSource.items.remove(at: i)
+				Section(header: Text("Available dogs:")) {
+					ForEach(dataSource.items) { row in
+						DogCard(dataSource: row)
+					}
+					.onDelete { indices in
+						for i in indices.reversed() {
+							self.dataSource.items.remove(at: i)
+						}
 					}
 				}
 			}
+			.listStyle(.grouped)
 			.navigationBarTitle(Text("My dogs"))
 			.navigationBarItems(trailing: Button(action: {
 				withAnimation { self.addDog() }

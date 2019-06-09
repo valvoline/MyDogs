@@ -26,7 +26,12 @@ class Dog : BindableObject, Identifiable {
 			didChange.send(self)
 		}
 	}
-	var rating: Float = 10.0 //all dogs are good, by default
+	var rating: Float = 10.0 {
+		didSet {
+			didChange.send(self)
+		}
+	}//all dogs are good, by default
+	
 	private var task: URLSessionDataTask?
 	private var subTask: URLSessionDataTask?
 	
@@ -69,5 +74,4 @@ class Dog : BindableObject, Identifiable {
 		})
 		task?.resume()
 	}
-	
 }

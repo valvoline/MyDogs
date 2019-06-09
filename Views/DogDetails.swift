@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct DogDetailsView: View {
-	///using @State there was wrong, since we introduced a duplicate Source of Thruth.
 	@ObjectBinding var dataSource: Dog
+	@EnvironmentObject var dogList: DogList
 	
 	var body: some View {
 		NavigationView {
@@ -25,11 +25,19 @@ struct DogDetailsView: View {
 					.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
 				Text(dataSource.description)
 					.font(.footnote)
+				Stepper(value: $dataSource.rating, in: 1...10) {
+					Text("Rating: \(dataSource.rating)")
+				}.padding(EdgeInsets(top: 0, leading: 32, bottom: 0, trailing: 32))
 				Slider(value: $dataSource.rating, from: 0.0, through: 10.0, by: 1.0).padding(EdgeInsets(top: 32, leading: 32, bottom: 32, trailing: 32))
 				Spacer()
 			}
 			}.navigationBarItems(trailing: Button(action: {
 				self.dataSource.favorited = !self.dataSource.favorited
+				if self.dataSource.favorited == true {
+					self.dogList.moveToFavorites(self.dataSource)
+				} else {
+					self.dogList.removeFromFavorites(self.dataSource)
+				}
 			}, label: {
 				Image(systemName: (self.dataSource.favorited) ? "star.fill" : "star")
 					.imageScale(Image.Scale.large)
